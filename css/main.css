@@ -1,0 +1,121 @@
+* { 
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+}
+
+body > * { 
+    border: 2px solid black;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 50% 50%; 
+    grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh 30vh 30vh;
+    grid-template-areas: 
+        "title login"
+        "nav nav"
+        "sidebar sidebar"
+        "welcome welcome"
+        "events events"
+        "promotions promotions"
+        "content content"
+        "footer footer";
+}
+
+#title { grid-area: title; }
+#login { grid-area: login; }
+#nav { grid-area: nav; }
+#sidebar { grid-area: sidebar; }
+#welcome { grid-area: welcome; }
+#events { grid-area: events; }
+#content { grid-area: content; }
+#promotions { grid-area: promotions; }
+#footer { grid-area: footer; }
+
+@media screen and ( min-width: 500px ) {
+
+    body {
+    grid-template-columns: 50% 50%; 
+    grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh 30vh;
+    grid-template-areas: 
+        "title login"
+        "nav nav"
+        "welcome welcome"
+        "sidebar sidebar"
+        "events promotions"
+        "content content"
+        "footer footer";
+    }
+} 
+
+@media screen and ( min-width: 1024px ) {
+
+    body {
+        grid-template-columns: 
+            calc( 100% / 3 ) 
+            calc( 100% / 6 ) 
+            calc( 100% / 6 ) 
+            calc( 100% / 3 ); 
+        grid-template-rows: 35vw 35vw 35vw 35vw 35vw;
+        grid-template-areas: 
+            "title nav nav login"
+            "welcome welcome welcome welcome"
+            "events promotions sidebar sidebar"
+            "content content content sidebar"
+            "footer footer footer sidebar";
+        }
+        
+    #title { grid-area: title; }
+    #login { grid-area: login; }
+    #nav { grid-area: nav; }
+    #sidebar { grid-area: sidebar; }
+    #welcome { grid-area: welcome; }
+    #events { grid-area: events; }
+    #content { grid-area: content; }
+    #promotions { grid-area: promotions; }
+    #footer { grid-area: footer; }
+}
+
+/* #title {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+}
+
+#login {
+    grid-column: 4 / 4;
+    grid-row: 1 / 1;
+}
+
+#nav {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+}
+
+#welcome {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+}
+
+#events {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+}
+
+#promotions {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+#sidebar {
+    grid-column: 4;
+    grid-row: 3 / span 3;
+}
+
+#content {
+    grid-column: 1 / span 3;
+}
+
+#footer {
+    grid-column: 1 / span 3;
+} */
